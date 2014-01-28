@@ -1,9 +1,17 @@
+// Remote imports
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+@import url('//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css');
+@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css');
+
+// Desktop Styles
 @import 'style-desktop.less';
 
+// Mobile Styles
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
 	@import 'style-mobile.less';
 }
 
+// Print Styles
 @media print {
 	@import 'style-print.less';
 }

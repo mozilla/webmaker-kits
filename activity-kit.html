@@ -24,26 +24,6 @@ Need help? Start here: http://mzl.la/teachingkit-tips
 <!-- =============================== -->
 <!-- ADD YOUR TITLE HERE -->
 <title>Activity Template</title>
-<script>(function fixExternalLinks() {
-              function pointToBlank(a) {
-                var href = a.getAttribute("href");
-                if (href && href.indexOf("://") > -1) {
-                  // this is an external link.
-                  if(!a.getAttribute("target")) {
-                    a.setAttribute("target", "_blank");
-                  }
-                }
-              }
-              function fixLinks() {
-                document.removeEventListener("DOMContentLoaded", fixLinks);
-                var anchors = document.querySelectorAll("a");
-                var asArray = Array.prototype.slice.call(anchors);
-                asArray.forEach(function(a) {
-                  pointToBlank(a);
-                });
-              }
-              document.addEventListener("DOMContentLoaded", fixLinks);
-            }())</script>
 </head>
 <body>
 <div class="wrapper">
