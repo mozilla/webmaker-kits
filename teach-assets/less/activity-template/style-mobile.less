@@ -3,142 +3,122 @@ section {
     font-weight: 300;
     line-height: 1;
     margin-bottom: 50px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 10px;
-
-    & > h1 {
+    div {
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    h1 {
         margin-top: 0;
-        font-size: 46px;
+        font-size: 45px;
     }
 }
-
+i {
+    font-size: 45px;
+}
 .wrapper {
     margin: 10px 10px 40px 10px;
     width: 620px;
 }
-
 #header {
     padding: 30px;
     text-align: center;
+    -webkit-flex-direction: column;
     -webkit-box-orient: vertical;
 }
-
-#header-content {
-    left: auto;
-}
-
 #header-img {
     img {
-        left: 0;
+        position: relative;
+        left: auto;
     }
 }
-
+#header-content {
+    left: auto;
+    margin: auto;
+}
 #header-group {
     width: auto;
-
     h1 {
         font-size: 54px;
     }
-
     h2 {
         font-size: 32px;
     }
 }
-
 #teachingkit-banner {
     display: none;
 }
-
 #metadata {
     display: none;
 }
-
 .print {
     display: none;
 }
-
 #content {
     display: table;
-    padding: 0 5px 30px 5px;
+    padding: 30px 5px;
 }
-
 #left-side {
     padding: 0;
     width: auto;
     display: table-row-group;
-
     section {
         font-size: 28px;
         font-weight: 400;
         line-height: 1.5;
     }
-
-    & > section {
-
-        & > h1 {
-            font-size: 50px;
-        }
-    }
 }
-
-#review {
-    div {
-        font-size: 28px;
-        font-weight: 400;
+.small-checkbox-section div,#review div {
+    font-size: 28px;
+    font-weight: 400;
+}
+.small-checkbox-section ul,#review ul {
+    font-size: 26px;
+    font-weight: 400;
+}
+.small-checkbox-section {
+    li {
+        position: relative;
+        bottom: 5px;
+        font-size: 30px;
     }
-
     ul {
         font-size: 26px;
-        font-weight: 400;
-    }
-
-    input[type=checkbox] {
-        & + label:after {
-            position: relative;
-            display: inline-block;
-            font-family: "FontAwesome";
-            content: '\f096';
-            font-size: 40px;
-            color: #3fb58e;
-            margin-right: 32px;
-            width: 15px;
-            top: 7px;
-        }
     }
 }
-
+.small-checkbox-section input[type=checkbox] + label:after,#review input[type=checkbox] + label:after {
+    position: relative;
+    display: inline-block;
+    font-family: "FontAwesome";
+    content: '\f096';
+    font-size: 40px;
+    color: #3fb58e;
+    margin-right: 32px;
+    width: 15px;
+    top: 7px;
+}
 #right-side {
     padding: 0;
     width: auto;
     display: table-header-group;
 }
-
 #agenda {
-    padding-left: 10px;
-
-    & > h1 {
-        padding-left: 10px;
-    }
-
     ol {
         font-size: 30px;
         line-height: 55px;
         font-weight: 300;
-
         li {
             margin-left: 45px;
             font-weight: 400;
-
-            a {
-                display: inline-block;
-                line-height: 1.2;
-                vertical-align: middle;
-            }
-
-            &:before {
-                font-size: 26px;
-          }
         }
+        li:before {
+            font-size: 26px;
+        }
+    }
+    a {
+        display: inline-block;
+        line-height: 1.2;
     }
 }
 #about {
@@ -146,52 +126,63 @@ section {
         margin-top: 0;
     }
 }
-
 #resources {
     ul {
-        padding-left: 0;
+        padding-left: 20px;
         margin-bottom: 0;
-        
         li {
             font-size: 15px;
             font-weight: 400;
             line-height: 1.2;
             margin-bottom: 25px;
-         
             a {
                 font-size: 30px;
                 vertical-align: middle;
             }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
+        }
+        li:last-of-type {
+            margin-bottom: 0;
         }
     }
 }
-
+.tag-section {
+    margin-bottom: 40px;
+}
 #tags {
-    padding-top: 60px;
-    margin-bottom: 50px;
-
+    padding-top: 30px;
+    margin-bottom: 20px;
     ul {
         position: relative;
     }
 }
-
 .tag-item {
+    line-height: 1;
     font-size: 30px;
     font-weight: 300;
     padding: 30px 25px;
     margin: 0 10px 10px 0;
 }
-
-#about > h1, #review > h1 {
-    font-size: 50px;
+#about h1,#review h1 {
+    font-size: 48px;
     line-height: 1;
     margin-bottom: 22px;
 }
-
-.teach-checklist div, #review div {
-    padding: 25px 17px;
+.step-section {
+    ol {
+        position: relative;
+        width: 90%;
+        left: 50px;
+        & > li:before {
+            font-size: 20px;
+        }
+    }
+}
+.example-div {
+    max-width: none;
+    ul {
+        padding-left: 40px;
+    }
+}
+.big-green-title {
+    font-size: 55px;
 }

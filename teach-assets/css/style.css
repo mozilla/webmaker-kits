@@ -380,7 +380,7 @@ li {
     font-size: 26px;
     font-weight: 400;
   }
-  #review input[type=checkbox]  label:after {
+  #review input[type=checkbox]  + label:after {
     position: relative;
     display: inline-block;
     font-family: "FontAwesome";
