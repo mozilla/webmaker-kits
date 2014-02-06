@@ -15,6 +15,7 @@
     <hgroup>
       <h1>Your title goes here</h1>
       <h2>Give it a one-line summary here. What will participants make or learn?</h2>
+      
       <p id="made-by">Made by <a href="http://example.com">your name</a></p>
     </hgroup>
   </header>
@@ -54,7 +55,7 @@
     </ul>
 
     <h1>Assessment criteria</h1>
-    <div class="teach-checklist">
+    <div class="checklist">
       <p>Got a check-list of criteria, or things to look for in a great completed project? Feel free to list them here:</p>
       <ul>
         <li>Criteria 1</li>
@@ -96,7 +97,7 @@
   </aside>
 
   <script>
-    var teachChecklists = document.querySelectorAll('.teach-checklist li');
+    var teachChecklists = document.querySelectorAll('.checklist li');
     for(var i = 0, j = teachChecklists.length; i < j; i++){
       teachChecklists[i].innerHTML = '<input id="r'+i+'" type="checkbox"><label for="r'+i+'"></label> ' + teachChecklists[i].innerHTML;
     }
