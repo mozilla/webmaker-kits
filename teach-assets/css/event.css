@@ -604,3 +604,6 @@ body.event .checklist input[type=checkbox] + label::after {
     font-weight: 300;
   }
 }
+html {
+  background: #FFF2CC;
+}

@@ -1,124 +1,61 @@
-section {
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 1;
-    margin-bottom: 50px;
-    padding-left: 20px;
-    padding-right: 10px;
-
-    & > h1 {
-        margin-top: 0;
-        font-size: 46px;
-    }
-}
-
-.wrapper {
+body {
     margin: 10px 10px 40px 10px;
     width: 620px;
 }
 
-#header {
+header {
     padding: 30px;
     text-align: center;
     -webkit-box-orient: vertical;
-}
-
-#header-content {
-    left: auto;
-}
-
-#header-img {
-    img {
+    
+    #header-image {
         left: 0;
     }
-}
 
-#header-group {
-    width: auto;
+    & > hgroup {
+        width: auto;
+        left: 0;
 
-    h1 {
-        font-size: 54px;
+        h1 {
+            font-size: 54px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        p#made-by {
+            display: none;
+        }
     }
-
-    h2 {
-        font-size: 32px;
-    }
-}
-
-#teachingkit-banner {
-    display: none;
-}
-
-#metadata {
-    display: none;
 }
 
 .print {
     display: none;
 }
 
-#content {
-    display: table;
-    padding: 0 5px 30px 5px;
+main, #main {
+    padding: 0 20px 30px 20px;
+    width: 580px;
+
+    h1 {
+        margin-top: 0;
+        font-size: 46px;
+    }
 }
 
-#left-side {
-    padding: 0;
+aside {
     width: auto;
-    display: table-row-group;
 
-    section {
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 1.5;
-    }
-
-    & > section {
-
-        & > h1 {
-            font-size: 50px;
-        }
+    h1 {
+        margin-top: 0;
+        font-size: 46px;
     }
 }
 
-#review {
-    div {
-        font-size: 28px;
-        font-weight: 400;
-    }
-
-    ul {
-        font-size: 26px;
-        font-weight: 400;
-    }
-
-    input[type=checkbox] {
-        & + label:after {
-            position: relative;
-            display: inline-block;
-            font-family: "FontAwesome";
-            content: '\f096';
-            font-size: 40px;
-            color: #3fb58e;
-            margin-right: 32px;
-            width: 15px;
-            top: 7px;
-        }
-    }
-}
-
-#right-side {
-    padding: 0;
-    width: auto;
-    display: table-header-group;
-}
-
-#agenda {
+.agenda {
     padding-left: 10px;
-
-    & > h1 {
-        padding-left: 10px;
-    }
+    width: 560px;
 
     ol {
         font-size: 30px;
@@ -141,57 +78,36 @@ section {
         }
     }
 }
-#about {
-    p:first-of-type {
-        margin-top: 0;
-    }
-}
 
-#resources {
-    ul {
-        padding-left: 0;
-        margin-bottom: 0;
-        
-        li {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 25px;
-         
-            a {
-                font-size: 30px;
-                vertical-align: middle;
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
-#tags {
+ul.tags {
+    position: relative;
     padding-top: 60px;
     margin-bottom: 50px;
 
-    ul {
-        position: relative;
+    li, .tag-item {
+        font-size: 30px;
+        font-weight: 300;
+        padding: 30px 25px;
+        margin: 0 10px 10px 0;
     }
 }
 
-.tag-item {
-    font-size: 30px;
-    font-weight: 300;
-    padding: 30px 25px;
-    margin: 0 10px 10px 0;
-}
-
-#about > h1, #review > h1 {
-    font-size: 50px;
-    line-height: 1;
-    margin-bottom: 22px;
-}
-
-.teach-checklist div, #review div {
+.checklist {
     padding: 25px 17px;
+}
+
+.well {
+    max-width: 580px;
+    margin: 20px;
+}
+
+.step-section {
+    ol {
+        position: relative;
+        width: 90%;
+        left: 50px;
+        & > li:before {
+            font-size: 20px;
+        }
+    }
 }

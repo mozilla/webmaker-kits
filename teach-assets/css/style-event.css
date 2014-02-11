@@ -1,0 +1,16 @@
+body.event header {
+  position: relative;
+  background-color: #4D4E53;
+  color: #fff;
+}
+body.event header #ribbon {
+  background-color: #27AAE1;
+  color: #fff;
+}
+body.event main h1,
+body.event #main h1 {
+  color: #27AAE1;
+}
+body.event .checklist input[type=checkbox] + label::after {
+  color: #27AAE1;
+}

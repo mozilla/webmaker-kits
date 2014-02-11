@@ -336,6 +336,35 @@ i {
     color: #3FB58E;
 }
 
+ul.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 35px;
+
+    li, .tag-item {
+        display: block;
+        float: left;
+        color: #fff;
+        padding: 5px 15px;
+        margin: 0 5px 5px 0;
+        background-color: #3fb58e;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        a {
+            color: #fff;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: #20795b;
+        }
+    }
+}
+
 @media only screen and (min-width: 1520px){
     body {
         width: 1520px;
@@ -357,4 +386,5 @@ i {
 }
 
 // visual changes for activities
-@import '../style-activity.less';
+@import 'style-activity.less';
+@import 'style-event.less';
