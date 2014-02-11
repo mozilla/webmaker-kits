@@ -13,13 +13,13 @@
 
 ## Development
 
-Make sure to have **less** installed globally.
+Make sure to have **less** and **grunt** installed globally.
 
-	npm install less --global
+	npm install -g less grunt-cli
 
-This will allow you to run the included less watch compiler (by [Jony Cheung](https://github.com/jonycheung/Dead-Simple-LESS-Watch-Compiler)) and then hack on the `.less` files to modify the kit styles.
+Next run `npm install` to get all the needs of grunt (and the lightweight testing server).
 
-	node less-watch.js teach-assets/less teach-assets/css
+When you're ready to rock and roll you can start the server with `node server.js` and compile the less files with `grunt watch`
 
 ## License
 
