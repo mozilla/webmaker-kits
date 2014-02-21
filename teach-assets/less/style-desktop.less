@@ -52,6 +52,7 @@ header {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     overflow: hidden;
     min-height: 230px;
     display: flex;
@@ -75,7 +76,9 @@ header {
         display: inline-block;
         position: relative;
         width: 180px;
+        -max-width: 180px;
         height: 180px;
+        -max-height: 180px;
         border-radius: 100%;
         left: 45px;
         z-index: 0;
@@ -121,6 +124,7 @@ main, #main {
     width: 650px;
     display: inline-block;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-size: 15px;
     line-height: 1.5;
 
@@ -139,6 +143,7 @@ aside {
     width: 365px;
     display: inline-block;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .agenda {
@@ -210,6 +215,7 @@ aside {
 .checklist {
     padding: 15px 12px;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-weight: 400;
     border-radius: 5px;
 
@@ -307,6 +313,7 @@ aside {
 .well {
     display: inline-block;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     background-color: #e3eaee;
     border-radius: 5px;
     padding: 15px;
@@ -377,10 +384,11 @@ i {
 
     main, #main {
         width: 850px;
+        padding-left: 225px;
     }
 
     aside {
-        width: 400px;
+        width: 520px;
     }
 }
 

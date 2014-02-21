@@ -7,19 +7,36 @@ module.exports = function(grunt) {
 					paths: ["./teach-assets/css"],
 					yuicompress: true
 				},
-			files: {
-				"./teach-assets/css/style.css": "./teach-assets/less/style.less",
-				"./teach-assets/css/event.css": "./teach-assets/less/event.less",
+				files: {
+					"./teach-assets/css/style.css": "./teach-assets/less/style.less",
+					"./teach-assets/css/event.css": "./teach-assets/less/event.less",
+				}
 			}
+		},
+		autoprefixer: {
+			development: {
+				browsers: ['last 2 versions'],
+				expand: true,
+        		flatten: true,
+				src: "./teach-assets/css/*.css",
+				dest: "./teach-assets/css"
+			}
+		},
+		// running `grunt watch` will watch for changes
+		watch: {
+			less: {
+				files: "./teach-assets/less/*.less",
+				tasks: ["less"]
+			},
+			// prefixing: {
+			// 	files: "./teach-assets/css/*.css",
+			// 	tasks: ['autoprefixer']
+			// }
 		}
-	},
-	// running `grunt watch` will watch for changes
-	watch: {
-		files: "./teach-assets/less/*.less",
-		tasks: ["less"]
-	}
-});
+	});
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['less']);
+	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.registerTask('default', ['less', 'autoprefixer']);
+	grunt.registerTask('build', ['less', 'autoprefixer']);
 };
