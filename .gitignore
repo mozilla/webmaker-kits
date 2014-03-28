@@ -35,4 +35,4 @@ build
 node_modules
 
 ### Project specific
-teach-assets/css/*
+assets/css/*

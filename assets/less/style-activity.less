@@ -1,0 +1,53 @@
+body.activity {
+  header {
+    position: relative;
+    background-color: #fff2cc;
+    color: #4c4c4c;
+
+    #ribbon {
+      background-color: #3fb58e;
+      color: #fff;
+    }
+
+    #header-image {
+      border-radius: 50%;
+      border: 2px solid #ddd;
+    }
+
+    #made-by a {
+      color: #27aae1;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &::after {
+      content: '';
+      height: 100%;
+      position: absolute;
+      left: 10px;
+      top: 0;
+      z-index: 0;
+      border-left: 1px solid #ffdbc8;
+    }
+    &::before {
+      content: '';
+      width: 100%;
+      height: 60%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: -webkit-linear-gradient(top, #ffdbc8 0%, #fff2cc 8%) 0 57px;
+      background: -moz-linear-gradient(top, #ffdbc8 0%, #fff2cc 8%) 0 57px;
+      background: linear-gradient(top, #ffdbc8 0%, #fff2cc 8%) 0 57px;
+      -webkit-background-size: 100% 30px;
+      -moz-background-size: 100% 30px;
+      -ms-background-size: 100% 30px;
+      background-size: 100% 30px;
+      border-bottom: 1px dotted #ccc;
+      z-index: 0;
+    }
+  }
+}
