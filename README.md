@@ -17,7 +17,7 @@ Make sure to have **grunt** installed globally.
 
 	npm install -g grunt-cli
 
-Next run `npm install`, followed by `grunt watch` to get the development server running.
+Next run `npm install`, followed by `grunt dev` to get the development server running.
 
 #### Play nice
 
