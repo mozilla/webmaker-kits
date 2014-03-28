@@ -6,8 +6,7 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ['./assets/css'],
-          yuicompress: true
+          paths: ['./assets/css']
         },
         files: {
           './assets/css/style.css': './assets/less/style.less',
@@ -31,17 +30,18 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions'],
         expand: true,
         flatten: true,
+        map: true,
         src: './assets/css/*.css',
         dest: './assets/css'
       },
-      dist:{
+      dist: {
         browsers: ['last 2 versions'],
         expand: true,
         flatten: true,
         map: true,
         src: './dist/assets/css/*.css',
         dest: './dist/assets/css'
-      }
+      },
     },
     uglify: {
       dist: {
@@ -50,40 +50,33 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'dist/assets/js/main.min.js': [ 'dist/assets/js/main.js' ]
+          'dist/assets/js/main.min.js': [ './assets/js/main.js' ]
         }
       }
     },
-    copy: {
-      dist: {
-        files: [
-          {
-            src: './*.html',
-            dest: './dist/'
-          },
-          {
-            src: './assets/js/*.js',
-            dest: './dist/'
-          },
-          {
-            src: './assets/css/*.css',
-            dest: './dist/'
-          }
-        ]
-      },
-    },
     jshint: {
       options: {
-        strict: true,
-        curly: true,
-        newcap: true,
-        quotmark: true,
-        camelcase: true,
-        undef: true,
-        unused: true,
-        eqeqeq: true,
-        node: true,
-        browser: true
+        'globals': {
+          'module': false,
+          'angular': false,
+          'console': false,
+          'google': false,
+          'WebmakerAuthClient': false
+        },
+        'bitwise': true,
+        'browser': true,
+        'curly': true,
+        'eqeqeq': true,
+        'freeze': true,
+        'immed': true,
+        'indent': 2,
+        'latedef': true,
+        'newcap': true,
+        'noempty': true,
+        'quotmark': 'single',
+        'trailing': true,
+        'undef': true,
+        'unused': 'vars'
       },
       files: [
         'Gruntfile.js',
@@ -96,10 +89,10 @@ module.exports = function(grunt) {
         files: './assets/less/*.less',
         tasks: ['less']
       },
-      prefixing: {
-        files: './assets/less/*.less',
-        tasks: ['autoprefixer']
-      }
+      // prefixing: {
+      //   files: './assets/less/*.less',
+      //   tasks: ['autoprefixer']
+      // }
     },
     connect: {
       server: {
@@ -113,13 +106,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-  grunt.loadNpmTasks( 'grunt-contrib-copy' );
   grunt.loadNpmTasks( 'grunt-contrib-less' );
-  grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-contrib-connect' );
   grunt.loadNpmTasks( 'grunt-autoprefixer' );
+  grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer:development' ] );
-  grunt.registerTask( 'watch', [ 'less:development', 'autoprefixer:development', 'connect', 'watch' ] );
-  grunt.registerTask( 'build', [ 'jshint', 'less:development', 'autoprefixer:development', 'less:dist', 'autoprefixer:dist', 'copy:dist', 'uglify:dist' ] );
+  grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer:dist', 'uglify' ] );
 };
