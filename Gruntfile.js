@@ -28,15 +28,25 @@ module.exports = function(grunt) {
 				files: "./teach-assets/less/*.less",
 				tasks: ["less"]
 			},
-			// prefixing: {
-			// 	files: "./teach-assets/css/*.css",
-			// 	tasks: ['autoprefixer']
-			// }
+			prefixing: {
+				files: "./teach-assets/less/*.less",
+				tasks: ['autoprefixer']
+			}
+		},
+		connect: {
+			server: {
+		    options: {
+		      port: 9999,
+		      useAvailablePort: true
+		    }
+		  }
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.registerTask('default', ['less', 'autoprefixer']);
+
+	grunt.registerTask('default', ['less', 'autoprefixer', 'connect', 'watch']);
 	grunt.registerTask('build', ['less', 'autoprefixer']);
 };
