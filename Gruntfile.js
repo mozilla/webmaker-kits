@@ -89,10 +89,10 @@ module.exports = function(grunt) {
         files: './assets/less/*.less',
         tasks: ['less']
       },
-      // prefixing: {
-      //   files: './assets/less/*.less',
-      //   tasks: ['autoprefixer']
-      // }
+      prefixing: {
+        files: './assets/less/*.less',
+        tasks: ['autoprefixer']
+      }
     },
     connect: {
       server: {
@@ -112,5 +112,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer:development' ] );
+  grunt.registerTask( 'watch', [ 'less:development', 'autoprefixer:development', 'connect', 'watch' ] );
   grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer:dist', 'uglify' ] );
 };
