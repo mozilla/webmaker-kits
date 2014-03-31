@@ -6,52 +6,49 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ['./assets/css']
+          paths: ['dist/css'],
+          compress: true,
+          sourceMap: true,
+          sourceMapBasepath: '/',
+          sourceMapRootpath: '/'
         },
         files: {
-          './assets/css/style.css': './assets/less/style.less',
-          './assets/css/event.css': './assets/less/event.less',
+          'dist/css/style.css': 'assets/less/style.less',
+          'dist/css/event.css': 'assets/less/event.less'
         }
       },
       dist: {
         options: {
-          paths: ['./dist/assets/css'],
-          compress: true,
-          sourceMap: true
+          paths: ['dist/css'],
+          compress: true
         },
         files: {
-          './dist/assets/css/style.min.css': './assets/less/style.less',
-          './dist/assets/css/event.min.css': './assets/less/event.less',
+          'dist/css/style.css': 'assets/less/style.less',
+          'dist/css/event.css': 'assets/less/event.less'
         }
       }
     },
     autoprefixer: {
-      development: {
+      main: {
         browsers: ['last 2 versions'],
         expand: true,
         flatten: true,
         map: true,
-        src: './assets/css/*.css',
-        dest: './assets/css'
-      },
-      dist: {
-        browsers: ['last 2 versions'],
-        expand: true,
-        flatten: true,
-        map: true,
-        src: './dist/assets/css/*.css',
-        dest: './dist/assets/css'
-      },
+        src: 'dist/css/*.css',
+        dest: 'dist/css'
+      }
     },
     uglify: {
-      dist: {
-        options: {
-          mangle: false,
-          sourceMap: true
-        },
-        files: {
-          'dist/assets/js/main.min.js': [ './assets/js/main.js' ]
-        }
+      options: {
+        mangle: false,
+        sourceMap: true
+      },
+      files: {
+        src: 'assets/js/**/*.js',
+        dest: 'dist/js',
+        expand: true,
+        flatten: true,
+        ext: '.min.js'
       }
     },
     jshint: {
@@ -80,13 +77,13 @@ module.exports = function(grunt) {
       },
       files: [
         'Gruntfile.js',
-        'asset/js/**/*.js'
+        'assets/js/**/*.js'
       ]
     },
     // running `grunt watch` will watch for changes
     watch: {
-      files: './assets/less/*.less',
-      tasks: ['less:development', 'autoprefixer:development']
+      files: 'assets/less/*.less',
+      tasks: ['less:development', 'autoprefixer']
     },
     connect: {
       server: {
@@ -105,7 +102,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-autoprefixer' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
-  grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer:development' ] );
-  grunt.registerTask( 'dev', [ 'less:development', 'autoprefixer:development', 'connect', 'watch' ] );
-  grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer:dist', 'uglify' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'connect', 'watch' ] );
+  grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer', 'uglify' ] );
 };
