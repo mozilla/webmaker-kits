@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+deploy:
+  provider: s3
+  access_key_id: "NEEDS TO BE GENERATED"
+  secret_access_key: "NEEDS TO BE GENERATED"
+  bucket: "NEEDS TO BE CHOSEN"
+  skip_cleanup: true
+  upload-dir: webmaker-kits
+  local-dir: dist
+  on:
+    tags: true
+after_success:
+- echo "Deploying commit $TRAVIS_COMMIT"
