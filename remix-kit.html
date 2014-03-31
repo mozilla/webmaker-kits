@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="kit" name="webmaker:tags">
-  <link href="./assets/css/style.css" media="all" rel="stylesheet" type="text/css">
+  <link href="dist/css/style.css" media="all" rel="stylesheet" type="text/css">
   <title>Teaching Kit Template</title>
   <style>
       th, td {
@@ -117,11 +117,6 @@
     </section>
   </aside>
 
-  <script>
-    var teachChecklists = document.querySelectorAll('.checklist li');
-    for(var i = 0, j = teachChecklists.length; i < j; i++){
-      teachChecklists[i].innerHTML = '<input id="r'+i+'" type="checkbox"><label for="r'+i+'"></label> ' + teachChecklists[i].innerHTML;
-    }
-  </script>
+  <script src="dist/js/main.min.js"></script>
 </body>
 </html>
