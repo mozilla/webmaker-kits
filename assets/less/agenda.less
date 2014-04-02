@@ -1,0 +1,49 @@
+/*********************************************************
+* Agenda
+*/
+
+ol.agenda {
+  counter-reset: item;
+  padding-left: 10px;
+  background-color: #fff2cc;
+  border-bottom: 1px dotted #ccc;
+  position: relative;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+    border-bottom: 1px dotted #ccc;
+    padding: 10px 10px 10px 0;
+    margin: 0;
+    margin-left: 2.5em;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  li::before {
+    content: counter(item, decimal) ".";
+    counter-increment: item;
+    display: inline-block;
+    vertical-align: baseline;
+    position: absolute;
+    left: 0.5em;
+    width: 2em;
+    text-align: right;
+    color: #555;
+  }
+
+  &::before {
+    position: absolute;
+    border-left: 1px solid #ffaa9f;
+    border-right: 1px solid #ffaa9f;
+    width: 2px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    margin-left: 0px;
+    z-index: 0;
+    content: '';
+  }
+}

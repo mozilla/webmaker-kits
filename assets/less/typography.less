@@ -1,0 +1,81 @@
+/*********************************************************
+* Typography
+*/
+
+body {
+  line-height: 1.6;
+}
+
+@media screen {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: #27aae1;
+  text-decoration: none;
+
+  &:hover {
+    color: #0092cf;
+    text-decoration: underline;
+  }
+
+  @media print {
+    &:after {
+      content: " (" attr(href) ") ";
+    }
+  }
+
+}
+
+ul {
+  padding-left: 1em;
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+// Spacing
+.wrapper {
+  @media screen {
+    h2,
+    section {
+      margin-top: 2rem;
+    }
+    section h2 {
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #00be7a;
+    }
+  }
+
+}
+
+// Icons
+i {
+  color: #3FB58E;
+  @media print {
+    color: #999;
+  }
+}

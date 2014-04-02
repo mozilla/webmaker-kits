@@ -82,8 +82,8 @@ module.exports = function(grunt) {
     },
     // running `grunt watch` will watch for changes
     watch: {
-      files: 'assets/less/*.less',
-      tasks: ['less:development', 'autoprefixer']
+      files: ['assets/less/*.less', 'assets/js/*.js'],
+      tasks: ['less:development', 'autoprefixer', 'uglify']
     },
     connect: {
       server: {
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-autoprefixer' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
-  grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'connect', 'watch' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'uglify', 'connect', 'watch' ] );
   grunt.registerTask( 'test', [ 'jshint'] );
   grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer', 'uglify' ] );
 };

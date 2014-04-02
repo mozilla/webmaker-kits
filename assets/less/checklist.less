@@ -1,0 +1,38 @@
+/*********************************************************
+* Checklist
+*/
+
+.checklist {
+  ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 0;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  input[type=checkbox] + label::after {
+    position: relative;
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f096';
+    font-size: 20px;
+    color: #3fb583;
+    margin-right: 13px;
+    width: 15px;
+    top: 3px;
+    @media print {
+      color: #999;
+    }
+  }
+
+  input[type=checkbox]:checked + label::after {
+    content: '\f046';
+  }
+}
