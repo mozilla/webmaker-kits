@@ -3,7 +3,7 @@
   "description": "",
   "version": "2.3.1",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",

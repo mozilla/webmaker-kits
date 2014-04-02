@@ -103,5 +103,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'connect', 'watch' ] );
+  grunt.registerTask( 'test', [ 'jshint'] );
   grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer', 'uglify' ] );
 };
