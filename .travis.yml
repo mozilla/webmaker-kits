@@ -7,13 +7,13 @@ deploy:
   provider: s3
   access_key_id:
     secure: bIGu9TNiXm6vY93XiMSZkElaQ56ps2zpKrEPLAgopHkc/zLoxdAdbiuIfPycZOPuFvbvIwSHvzWKatKLB+csovVFuZ7JinczYa1rJUaNpVBS+48H78SumVk9oQok1s1Of0TKvWzdyz9FP5qxY4/uDyyU0h2DibnsqskfQM/Xlao=
-  secret_access_key_id:
+  secret_access_key:
     secure: WdluvIfPJBvj/LwLk8N48RJMktzc2QiYGzV1qxIrDfR2Zsp5RwbT8F2u7lwHFfiGOGv5892duZCMO5/VzOMm5K57HxQoNbiq+65IUV/mfTRLYQYGZuYbbc7IfiTtSsSf4oJhb9oHdDZaW7KmLSMYfPi7B8K7/0aaryaasH2R6gE=
   bucket: stuff.webmaker.org
   skip_cleanup: true
   upload-dir: webmaker-kits
   local-dir: dist
   on:
-    branch: gh-pages
+    tags: true
 after_success:
   - echo "Deploying commit $TRAVIS_COMMIT"
