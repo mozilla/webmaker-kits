@@ -13,5 +13,7 @@ deploy:
   skip_cleanup: true
   upload-dir: webmaker-kits
   local-dir: dist
+  on:
+    branch: gh-pages
 after_success:
   - echo "Deploying commit $TRAVIS_COMMIT"
