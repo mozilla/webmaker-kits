@@ -1,8 +1,13 @@
 language: node_js
 node_js:
   - "0.10"
+branches:
+  only:
+  - gh-pages
 before_script:
   - npm install -g grunt-cli
+before_deploy:
+  - echo "Deploying commit $TRAVIS_COMMIT"
 deploy:
   provider: s3
   access_key_id:
@@ -14,6 +19,6 @@ deploy:
   upload-dir: webmaker-kits
   local-dir: dist
   on:
+    branch: gh-pages
+    repo: mozilla/webmaker-kits
     tags: true
-after_success:
-  - echo "Deploying commit $TRAVIS_COMMIT"
