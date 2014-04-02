@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-- '0.10'
+  - "0.10"
+before_script:
+  - npm install -g grunt-cli
 deploy:
   provider: s3
   access_key_id:
@@ -12,4 +14,4 @@ deploy:
   upload-dir: webmaker-kits
   local-dir: dist
 after_success:
-- echo "Deploying commit $TRAVIS_COMMIT"
+  - echo "Deploying commit $TRAVIS_COMMIT"
