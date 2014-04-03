@@ -13,8 +13,7 @@ module.exports = function(grunt) {
           sourceMapRootpath: '/'
         },
         files: {
-          'dist/css/style.css': 'assets/less/style.less',
-          'dist/css/event.css': 'assets/less/event.less'
+          'dist/css/style.css': 'assets/less/style.less'
         }
       },
       dist: {
@@ -23,8 +22,7 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'dist/css/style.css': 'assets/less/style.less',
-          'dist/css/event.css': 'assets/less/event.less'
+          'dist/css/style.css': 'assets/less/style.less'
         }
       }
     },
