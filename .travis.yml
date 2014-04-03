@@ -8,6 +8,7 @@ before_script:
   - npm install -g grunt-cli
 before_deploy:
   - echo "Deploying commit $TRAVIS_COMMIT"
+  - grunt deploy
 deploy:
   provider: s3
   access_key_id:
@@ -15,9 +16,9 @@ deploy:
   secret_access_key:
     secure: WdluvIfPJBvj/LwLk8N48RJMktzc2QiYGzV1qxIrDfR2Zsp5RwbT8F2u7lwHFfiGOGv5892duZCMO5/VzOMm5K57HxQoNbiq+65IUV/mfTRLYQYGZuYbbc7IfiTtSsSf4oJhb9oHdDZaW7KmLSMYfPi7B8K7/0aaryaasH2R6gE=
   bucket: stuff.webmaker.org
-  skip_cleanup: true
+  skip_cleanup: false
   upload-dir: webmaker-kits
-  local-dir: dist
+  local-dir: deploy
   on:
     branch: gh-pages
     repo: mozilla/webmaker-kits
