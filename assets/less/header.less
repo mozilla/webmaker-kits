@@ -1,0 +1,64 @@
+/*********************************************************
+* Header
+*/
+
+header {
+  position: relative;
+  color: #fff;
+  background: #3fb58e;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  text-align: center;
+
+  @media (min-width: @screen-sm-min) {
+    text-align: left;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media print {
+    text-align: left;
+    border-bottom: 1px solid #CCC;
+    color: #555;
+  }
+
+  > hgroup {
+    .container;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+#ribbon {
+  text-align: center;
+  color: #686868;
+  background: #ffcd36;
+  padding: 10px;
+  z-index: 1;
+  @media print {
+    display: none;
+  }
+  @media (min-width: @screen-sm-min) {
+    font-size: 13px;
+    position: absolute;
+    top: 30px;
+    left: -60px;
+    width: 200px;
+    transform: rotate(-45deg);
+  }
+  @media (min-width: (@screen-lg-min + 60)) {
+    font-size: 18px;
+    top: 50px;
+    left: -80px;
+    width: 300px;
+  }
+}

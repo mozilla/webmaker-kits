@@ -1,0 +1,71 @@
+/*********************************************************
+* Step section
+*/
+
+.step-section {
+  p {
+    overflow: hidden;
+    margin: 0;
+    padding-bottom:10px;
+  }
+  img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  ol {
+    list-style-type: none;
+    counter-reset: step-counter;
+
+    padding-left: 35px;
+    @media (min-width: @screen-sm-min) {
+      padding-left: 10px;
+    }
+
+    & > li:before {
+      display: flex;
+      z-index: 5;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      justify-content: center;
+      -webkit-justify-content: center;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      -webkit-flex-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      position: absolute;
+      color: #27aae1;
+      font-weight: 700;
+      border: 2px solid #27aae1;
+      border-radius: 50%;
+      content: counter(step-counter);
+      counter-increment: step-counter;
+
+      padding: 5px;
+      width: 10px;
+      height: 10px;
+      left: -35px;
+      @media (min-width: @screen-sm-min) {
+        width: 30px;
+        height: 30px;
+        left: -60px;
+      }
+    }
+  }
+  & > ol {
+    & > li {
+      margin: 0;
+      margin: 0 0 30px;
+      position: relative;
+      & > p {
+        margin: 0;
+      }
+    }
+    & > li(:last-of-type) {
+      margin: 0;
+    }
+  }
+}

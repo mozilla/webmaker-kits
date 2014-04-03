@@ -1,0 +1,16 @@
+{
+  "name": "webmaker-kits",
+  "version": "2.2.1",
+  "homepage": "https://github.com/mozilla/webmaker-kits",
+  "authors": [
+    "fuzzyfox",
+    "k88hudson"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "makerstrap": "0.1.2",
+    "font-awesome": "~4.0.3",
+    "normalize.css": "~3.0.1",
+    "animate.css": "~3.1.0"
+  }
+}

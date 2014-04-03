@@ -1,0 +1,21 @@
+/*********************************************************
+* Main
+*/
+
+// Main container
+.wrapper {
+  .container;
+  .clearfix;
+  background: white;
+}
+
+main, #main {
+  .make-sm-column(8);
+  font-size: 16px;
+}
+
+// Right section
+aside {
+  page-break-before: always; // For print
+  .make-sm-column(4);
+}

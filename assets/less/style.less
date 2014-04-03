@@ -1,17 +1,30 @@
 // Remote imports
 @import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600');
-@import url('//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css');
-@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css');
+@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css');
 
-// Desktop Styles
-@import 'style-desktop.less';
+@import (less) "../../bower_components/normalize.css/normalize.css";
 
-// Mobile Styles
-@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
-	@import 'style-mobile.less';
-}
+@import (less) "../../bower_components/animate.css/animate.css";
 
-// Print Styles
-@media print {
-	@import 'style-print.less';
-}
+@import "../../bower_components/bootstrap/less/variables";
+@import "../../bower_components/bootstrap/less/mixins";
+@import "../../bower_components/bootstrap/less/grid";
+
+
+// Main
+@import 'base';
+@import 'animations';
+@import 'typography';
+@import 'header';
+@import 'main';
+
+// Components
+@import 'agenda';
+@import 'checklist';
+@import 'step-section';
+@import 'well';
+@import 'tags-list';
+
+// Variations
+@import 'variations/activity.less';
+@import 'variations/event.less';
