@@ -1,10 +1,8 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var majorVersion = require('./package.json').version.split('.')[0];
-
   grunt.initConfig({
-    // running `grunt less` will compile once
+    pkg: grunt.file.readJSON('package.json'),
     less: {
       development: {
         options: {
@@ -91,7 +89,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'dist/',
         src: '**/*',
-        dest: 'deploy/v' + majorVersion + '/'
+        dest: 'deploy/v<%= pkg.version.split(".")[0] %>/'
       },
     },
     // running `grunt watch` will watch for changes
