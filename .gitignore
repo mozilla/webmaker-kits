@@ -37,4 +37,5 @@ bower_components/
 
 ### Project specific
 dist/**/*.map
+deploy/
 

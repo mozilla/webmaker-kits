@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   'use strict';
 
+  var majorVersion = require('./package.json').version.split('.')[0];
+
   grunt.initConfig({
     // running `grunt less` will compile once
     less: {
@@ -78,6 +80,20 @@ module.exports = function(grunt) {
         'assets/js/**/*.js'
       ]
     },
+    copy: {
+      latest: {
+        expand: true,
+        cwd: 'dist/',
+        src: '**/*',
+        dest: 'deploy/latest/'
+      },
+      version: {
+        expand: true,
+        cwd: 'dist/',
+        src: '**/*',
+        dest: 'deploy/v' + majorVersion + '/'
+      },
+    },
     // running `grunt watch` will watch for changes
     watch: {
       files: ['assets/less/*.less', 'assets/js/*.js'],
@@ -99,8 +115,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-connect' );
   grunt.loadNpmTasks( 'grunt-autoprefixer' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
+  grunt.loadNpmTasks( 'grunt-contrib-copy' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'uglify', 'connect', 'watch' ] );
   grunt.registerTask( 'test', [ 'jshint'] );
   grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer', 'uglify' ] );
+  grunt.registerTask( 'deploy', [ 'copy'] );
 };
