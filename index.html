@@ -2,14 +2,69 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta content="kit" name="webmaker:tags">
-  <title>Templates</title>
+  <link rel="stylesheet" href="//stuff.webmaker.org/makerstrap/latest/makerstrap.complete.min.css">
+  <title>webmaker-kits</title>
 </head>
 <body>
-  <h2>Kit Templates</h2>
-  <ul>
-    <li><a href="kit.html">Kit</a></li>
-    <li><a href="event.html">Event Kit</a></li>
-    <li><a href="activity.html">Activity</a></li>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <a class="navbar-brand" href="./">webmaker-kits</a>
+
+      </div>
+
+      <div style="height: 0px;" class="collapse navbar-collapse" collapse="isCollapsed">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a rel="githubRepoURL" href="https://github.com/mozilla/webmaker-kits"><span class="fa fa-github"></span> <span rel="githubRepo">mozilla/webmaker-kits</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+
+  <main class="container">
+    <h3>Loading...</h3>
+    <p>If after a few seconds you can still see this, <a href="./README.md">click here</a> for the readme file.</p>
+  </main>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script>
+  function githubRepo() {
+    var ghUser = location.host.split('.')[0];
+    var ghRepo = location.pathname.split('/')[1];
+    return ghUser + '/' + ghRepo;
+  }
+
+  function githubRepoURL() {
+    return 'https://github.com/' + githubRepo();
+  }
+
+  $.ajax( './README.md', {
+    dataType: 'text',
+    success: function( data ) {
+      var converter = new Showdown.converter();
+      var readme = converter.makeHtml(data);
+
+      // replace content
+      $( 'main' ).html( readme );
+
+      // set page/project title
+      $( 'head > title' ).text( $( 'h1:first-of-type' ).text() );
+      $( '.navbar-brand' ).text( $( 'h1:first-of-type' ).text() );
+
+      // current github user/repo
+      if( location.host.match( /github.io$/ ) ) {
+        $( '[rel=githubRepo]' ).text( githubRepo() );
+        $( '[rel=githubRepoURL]' ).attr( 'href', githubRepoURL() );
+      }
+    },
+    error: function() {
+      location.href = githubRepoURL() + '#readme';
+    }
+  });
+  </script>
 </body>
 </html>
