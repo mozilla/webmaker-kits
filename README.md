@@ -1,15 +1,18 @@
-# Simpler Webmaker Kits
-<https://bugzilla.mozilla.org/show_bug.cgi?id=962509>
-
- * Reduce CSS into a single <link> tag by consolidating into a single file
-	 * Even a main, and then including the rest w/ @imports
- * Remove HTML adding visual flare, and move it into the CSS
-	 * e.g. vertical lines for the agenda blocks
- * Make blocks more resuable by having stying them with class selectors not IDs.
- * Simplify and reduce code for layout
-	 * Rely more on heading level than section tags, make use of HTML5 tags like <header> and <main>
-
+# Webmaker Kits
 **Idea:** minimise the amount HTML needed to create a Teaching Kit, thus reducing the time it takes to create.
+
+## Usage
+
+1. Decide on whether you're creating a Teaching Kit or Activity
+2. Copy + Paste the HTML for your choice from this repository, into <http://thimble.webmaker.org>
+3. Change "`dist/`" for the stylesheets + javascript to "`//stuff.webmaker.org/webmaker-kits/v2/`""
+4. Hack away!
+
+## Demos
+
+* **Teaching Kit**: <https://mozilla.github.io/webmaker-kits/kit.html>
+* **Activity**: <https://mozilla.github.io/webmaker-kits/activity.html>
+* **Event Kit**: <https://mozilla.github.io/webmaker-kits/event.html>
 
 ## Development
 
