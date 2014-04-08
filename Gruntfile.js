@@ -1,12 +1,12 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
   'use strict';
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON( 'package.json' ),
     less: {
       development: {
         options: {
-          paths: ['dist/css'],
+          paths: [ 'dist/css' ],
           compress: true,
           sourceMap: true,
           sourceMapBasepath: '/',
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          paths: ['dist/css'],
+          paths: [ 'dist/css' ],
           compress: true
         },
         files: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       main: {
-        browsers: ['last 2 versions'],
+        browsers: [ 'last 2 versions' ],
         expand: true,
         flatten: true,
         map: true,
@@ -94,8 +94,8 @@ module.exports = function(grunt) {
     },
     // running `grunt watch` will watch for changes
     watch: {
-      files: ['assets/less/*.less', 'assets/js/*.js'],
-      tasks: ['less:development', 'autoprefixer', 'uglify']
+      files: [ 'assets/less/*.less', 'assets/js/*.js' ],
+      tasks: [ 'less:development', 'autoprefixer', 'uglify' ]
     },
     connect: {
       server: {
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-copy' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less:development', 'autoprefixer', 'uglify', 'connect', 'watch' ] );
-  grunt.registerTask( 'test', [ 'jshint'] );
+  grunt.registerTask( 'test', [ 'jshint' ] );
   grunt.registerTask( 'build', [ 'jshint', 'less:dist', 'autoprefixer', 'uglify' ] );
-  grunt.registerTask( 'deploy', [ 'copy'] );
+  grunt.registerTask( 'deploy', [ 'copy' ] );
 };
