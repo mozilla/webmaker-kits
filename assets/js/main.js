@@ -32,7 +32,7 @@
     });
 
     // when on published location w/ makeapi data guaranteed.
-    if ( window.location.toString().match( /^https?:\/\/([A-Za-z0-9_\-]+)\.makes\.org\/thimble\/(([A-Za-z0-9]+)==\/)?([A-Za-z0-9_\-]+)_?$/ ) ) {
+    if ( window.location.toString().match( /\.makes\.org\/thimble\// ) ) {
       var url = window.location.href;
       if( url.slice(-1) === '_' ) {
         url = url.slice( 0, -1 );
@@ -41,11 +41,13 @@
       makeapi.url( url ).then( function( err, makes ) {
         if( err ) {
           console.log( err );
+          tagsSection.parentNode.removeChild( tagsSection );
           return;
         }
 
         if( makes.length !== 1 ) {
           console.log( 'make not found' );
+          tagsSection.parentNode.removeChild( tagsSection );
           return;
         }
 
