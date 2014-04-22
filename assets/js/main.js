@@ -46,6 +46,7 @@
 
         if( makes.length !== 1 ) {
           console.log( 'make not found' );
+          return;
         }
 
         var make = makes[0];
