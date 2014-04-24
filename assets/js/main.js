@@ -54,7 +54,7 @@
         var make = makes[0];
         var tagList = '<ul>\n';
 
-        make.tags.forEach( function( tag ){
+        make.rawTags.forEach( function( tag ){
           tagList += '<li><a href="https://webmaker.org/t/' + tag + '" target="_blank">#' + tag + '</a></li>\n';
         });
 
