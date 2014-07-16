@@ -55,8 +55,7 @@
         var tagList = '<ul>\n';
 
         make.rawTags.forEach( function( tag ){
-          tag = decodeURIComponent( tag );
-          tagList += '<li><a href="https://webmaker.org/t/' + tag + '" target="_blank">#' + tag + '</a></li>\n';
+          tagList += '<li><a href="https://webmaker.org/t/' + tag + '" target="_blank">#' + decodeURIComponent( tag ) + '</a></li>\n';
         });
 
         tagList += '</ul>\n';
