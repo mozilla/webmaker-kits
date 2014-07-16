@@ -1,7 +1,7 @@
 {
   "name": "slimkits",
   "description": "",
-  "version": "2.3.11",
+  "version": "2.3.15",
   "scripts": {
     "test": "grunt test",
     "postinstall": "bower install"
